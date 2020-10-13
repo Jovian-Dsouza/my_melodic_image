@@ -6,7 +6,7 @@ ENV NVIDIA_VISIBLE_DEVICES \
 ENV NVIDIA_DRIVER_CAPABILITIES \
     ${NVIDIA_DRIVER_CAPABILITIES:+$NVIDIA_DRIVER_CAPABILITIES,}graphics
 
-RUN apt-get update && apt-get upgrade -y && apt-get install -y apt-utils build-essential psmisc vim-gtk
+RUN apt-get update && apt-get upgrade -y && apt-get install -y apt-utils build-essential psmisc vim-gtk neovim tmux
 RUN sudo apt-get install ros-melodic-catkin python-catkin-tools
 RUN sudo apt install ros-melodic-std-msgs
 RUN sudo apt-get install ros-melodic-ros-tutorials

@@ -11,8 +11,12 @@ then
     chmod a+r $XAUTH
 fi
 
+xhost +
 docker run -it \
-    --name="ros_melodic_container"\
+    -e USER=$USER \
+    --workdir=/home/$USER \
+    --name="ros_melodic_container" \
+    -e CONTAINER_NAME=ros_melodic_container \
     --env="DISPLAY=$DISPLAY" \
     --env="QT_X11_NO_MITSHM=1" \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
